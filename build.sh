@@ -3,6 +3,7 @@
 ############################################################
 # this script must be run on custom volumio release for
 # odroid C1 from https://github.com/jit06/Build
+# To be run as root
 ############################################################
 
 # install required packages
@@ -19,6 +20,13 @@ rm /usr/lib/chromium-browser/libEGL.so
 rm /usr/lib/chromium-browser/libGLESv2.so
 ln -s /usr/share/mali/libs/libEGL.so /usr/lib/chromium-browser/libEGL.so
 ln -s /usr/share/mali/libs/libGLESv2.so /usr/lib/chromium-browser/libGLESv2.so
+
+
+# enable kiosk mode
+cp scripts/volumiokiosk.sh /opt/
+cp scripts/volumio-kiosk.service /etc/systemd/system/
+chmod +x /opt/volumiokiosk.sh
+systemctl daemon-reload
 
 
 # set default uboot hdmi mode to 640x480 (default is 720p)
