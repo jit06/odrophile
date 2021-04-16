@@ -31,6 +31,7 @@ fw_setenv display_height 480
 
 
 # tell uboot to load the boot splash
+cp gfx/boot-logo.bmp /media/boot/
 fw_setenv preloadlogo 'video open;video clear; video dev open ${outputmode};fatload mmc 0:1 ${loadaddr_logo} boot-logo.bmp;bmp display ${loadaddr_logo}; bmp scale'
 
 
