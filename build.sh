@@ -36,8 +36,8 @@ fw_setenv preloadlogo 'video open;video clear; video dev open ${outputmode};fatl
 
 
 # handle the second splash screen in initram-fs
-cp logo.lzo /etc
-cp cpimg.sh /etc/initramfs-tools/hooks
+cp gfx/logo.lzo /etc/
+cp scripts/cpimg.sh /etc/initramfs-tools/hooks/
 
 echo "busybox lzop -d -c /etc/logo.lzo > /dev/fb0" >> /etc/initramfs-tools/scripts/local-top/c1_init.sh
 
