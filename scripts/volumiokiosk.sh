@@ -1,4 +1,10 @@
-/usr/lib/xorg/Xorg -nolisten tcp -novtswitch -nocursor &
+while ! wget -q --spider http://localhost:3000
+do
+ sleep 1
+done;
+
+/usr/lib/xorg/Xorg -nolisten tcp vt1 &
+#-novtswitch -nocursor &
 
 mkdir /tmp/volumiokiosk
 

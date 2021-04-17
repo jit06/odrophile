@@ -1,0 +1,12 @@
+[Unit]
+Description=Volumio Kiosk
+Wants=volumio.service
+After=volumio.service
+
+[Service]
+User=root
+Group=root
+ExecStart=/bin/bash /opt/volumiokiosk.sh 
+
+[Install]
+WantedBy=multi-user.target
