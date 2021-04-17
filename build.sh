@@ -13,6 +13,8 @@ apt-get -y install xorg xserver-xorg-video-mali mali-x11 chromium-browser busybo
 
 # allows mali HW accel
 echo "------------ enable HW accel for X"
+rm -f /usr/lib/arm-linux-gnueabihf/libUMP.so
+rm -f /usr/lib/arm-linux-gnueabihf/libMali.so
 ln -s /usr/share/mali/libs/libUMP.so /usr/lib/arm-linux-gnueabihf/libUMP.so
 ln -s /usr/share/mali/libs/libMali.so /usr/lib/arm-linux-gnueabihf/libMali.so
 
@@ -31,7 +33,8 @@ cp scripts/volumiokiosk.sh /opt/
 cp scripts/volumio-kiosk.service /etc/systemd/system/
 chmod +x /opt/volumiokiosk.sh
 systemctl daemon-reload
-
+systemctl enable volumio-kiosk
+systemctl disable getty@tty1.service
 
 # custom boot.ini
 echo "------------ install custom boot.ini"
