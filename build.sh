@@ -60,11 +60,11 @@ fw_setenv preloadlogo 'video open;video clear; video dev open ${outputmode};fatl
 echo "------------ set system splash"
 cp gfx/logo.lzo /etc/
 cp scripts/cpimg.sh /etc/initramfs-tools/hooks/
-
-echo "busybox lzop -d -c /etc/logo.lzo > /dev/fb0" >> /etc/initramfs-tools/scripts/local-top/c1_init.sh
+cp scripts/c1_init.sh /etc/initramfs-tools/scripts/local-top/
+chmod +x /etc/initramfs-tools/hooks/cpimg.sh
+chmod +x /etc/initramfs-tools/scripts/local-top/c1_init.sh
 
 update-initramfs -u
 mkimage -A arm -O linux -T ramdisk -C none -a 0 -e 0 -n uInitrd -d /boot/initrd.img-3.10.107-13 /media/boot/uInitrd
-
 
 echo "----------- finished"
