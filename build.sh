@@ -34,7 +34,6 @@ cp scripts/volumio-kiosk.service /etc/systemd/system/
 chmod +x /opt/volumiokiosk.sh
 systemctl daemon-reload
 systemctl enable volumio-kiosk
-systemctl disable getty@tty1.service
 
 # custom boot.ini
 echo "------------ install custom boot.ini"
