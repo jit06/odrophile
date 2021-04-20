@@ -1,13 +1,16 @@
+# wait for volumio UI to be ready
 while ! wget -q --spider http://localhost:3000
 do
  sleep 1
 done;
 
-/usr/lib/xorg/Xorg -nolisten tcp vt1 &
-#-novtswitch -nocursor &
+# start x on vt1
+/usr/lib/xorg/Xorg -nolisten -nocursor tcp vt1 &
 
+# create chromium data dir
 mkdir /tmp/volumiokiosk
 
+# start chromium
 DISPLAY=:0 /usr/bin/chromium-browser \
 --no-sandbox \
 --simulate-outdated-no-au='Tue, 31 Dec 2099 23:59:59 GMT' \
