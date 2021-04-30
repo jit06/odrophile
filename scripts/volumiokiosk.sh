@@ -5,7 +5,7 @@ do
 done;
 
 # start x on vt1
-/usr/lib/xorg/Xorg -nolisten -nocursor tcp vt1 &
+/usr/lib/xorg/Xorg -nolisten -nocursor vt1 &
 
 # create chromium data dir
 mkdir /tmp/volumiokiosk
