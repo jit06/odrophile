@@ -77,4 +77,12 @@ systemctl daemon-reload
 systemctl enable adc-volume
 
 
+# setup loading leds animation
+echo "------------ setup loading leds animation"
+cp scripts/loadingleds.sh /opt/
+cp scripts/loading-leds.service /etc/systemd/system/
+chmod +x /opt/loadingleds.sh
+systemctl daemon-reload
+systemctl enable loading-leds
+
 echo "----------- finished"

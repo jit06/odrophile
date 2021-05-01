@@ -1,0 +1,10 @@
+[Unit]
+Description=Loading animation with GPIO leds
+DefaultDependencies=no
+
+[Service]
+Type=simple
+ExecStart=/opt/loadingleds.sh
+
+[Install]
+WantedBy=sysinit.target
