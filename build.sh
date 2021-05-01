@@ -66,4 +66,15 @@ chmod +x /etc/initramfs-tools/scripts/local-top/c1_init.sh
 update-initramfs -u
 mkimage -A arm -O linux -T ramdisk -C none -a 0 -e 0 -n uInitrd -d /boot/initrd.img-3.10.107-13 /media/boot/uInitrd
 
+
+# setup volume knob support
+echo "------------ setup volume knob"
+sed -i -e "s/\${mixer}/mixer_type \"software\"/g" /volumio/app/plugins/music_service/mpd/mpd.conf.tmpl
+cp scripts/adcvolume.sh /opt/
+cp scripts/adc-volume.service /etc/systemd/system/
+chmod +x /opt/adcvolume.sh
+systemctl daemon-reload
+systemctl enable adc-volume
+
+
 echo "----------- finished"
