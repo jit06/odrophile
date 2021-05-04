@@ -8,7 +8,7 @@
 
 # install required packages
 echo "------------ install packages"
-apt-get -y install xorg xserver-xorg-video-mali mali-x11 chromium-browser busybox
+apt-get -y install xorg xserver-xorg-video-mali mali-x11 chromium-browser busybox unzip
 
 
 # allows mali HW accel
@@ -84,5 +84,21 @@ cp scripts/loading-leds.service /etc/systemd/system/
 chmod +x /opt/loadingleds.sh
 systemctl daemon-reload
 systemctl enable loading-leds
+
+# set hostname
+echo "------------ set hostname"
+echo "odrophile" >> /etc/hostname
+
+# install volumio plugin and configurations
+echo "------------ install volumio plugins"
+mkdir /tmp/gpiorandom
+cp plugins/gpiorandom.zip /tmp/gpiorandom/
+cd /tmp/gpiorandom
+unzip gpiorandom.zip
+volumio plugin install
+cd /home/volumio/odrophile
+echo "------------ install volumio configuration"
+cp -R plugins/configuration /data/
+
 
 echo "----------- finished"
