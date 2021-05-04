@@ -1,0 +1,34 @@
+{
+  "volumestart": {
+    "type": "string",
+    "value": "disabled"
+  },
+  "volumemax": {
+    "type": "string",
+    "value": "100"
+  },
+  "volumecurvemode": {
+    "type": "string",
+    "value": "logarithmic"
+  },
+  "outputdevice": {
+    "type": "string",
+    "value": "1"
+  },
+  "mixer_type": {
+    "type": "string",
+    "value": "None"
+  },
+  "mixer": {
+    "type": "string",
+    "value": ""
+  },
+  "volumesteps": {
+    "type": "string",
+    "value": "10"
+  },
+  "outputdevicename": {
+    "type": "string",
+    "value": "HiFi Shield/Shield+"
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "gpionum": {
+    "type": "number",
+    "value": 75
+  },
+  "nbsongs": {
+    "type": "number",
+    "value": 15
+  },
+  "clicktimeout": {
+    "type": "number",
+    "value": 800
+  },
+  "singleclick": {
+    "type": "boolean",
+    "value": false
+  },
+  "singleclickAction": {
+    "type": "number",
+    "value": 1
+  },
+  "doubleclick": {
+    "type": "boolean",
+    "value": true
+  },
+  "doubleclickAction": {
+    "type": "number",
+    "value": 1
+  },
+  "tripleclick": {
+    "type": "boolean",
+    "value": true
+  },
+  "tripleclickAction": {
+    "type": "number",
+    "value": 0
+  }
+}

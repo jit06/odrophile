@@ -1,0 +1,68 @@
+{
+  "gapless_mp3_playback": {
+    "type": "boolean",
+    "value": false
+  },
+  "volume_normalization": {
+    "type": "boolean",
+    "value": false
+  },
+  "audio_buffer_size": {
+    "type": "number",
+    "value": 2048
+  },
+  "buffer_before_play": {
+    "type": "string",
+    "value": "10%"
+  },
+  "dop": {
+    "type": "boolean",
+    "value": false
+  },
+  "auto_update": {
+    "type": "boolean",
+    "value": true
+  },
+  "nHost": {
+    "type": "string",
+    "value": "localhost"
+  },
+  "nPort": {
+    "type": "number",
+    "value": 6600
+  },
+  "collectionStats": {
+    "artists": {
+      "type": "number",
+      "value": 0
+    },
+    "albums": {
+      "type": "number",
+      "value": 0
+    },
+    "songs": {
+      "type": "number",
+      "value": 0
+    },
+    "playtime": {
+      "type": "string",
+      "value": ""
+    }
+  },
+  "singleBrowse": {
+    "type": "boolean",
+    "value": false
+  },
+  "tracknumbers": {
+    "type": "boolean",
+    "value": true
+  },
+  "compilation": {
+    "type": "string",
+    "value": "Various,various,Various Artists,various artists,VA,va"
+  },
+  "artistsort": {
+    "type": "boolean",
+    "value": true
+  }
+}

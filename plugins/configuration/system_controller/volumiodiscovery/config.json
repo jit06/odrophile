@@ -1,0 +1,10 @@
+{
+  "service": {
+    "type": "string",
+    "value": "Volumio"
+  },
+  "port": {
+    "type": "number",
+    "value": 3000
+  }
+}

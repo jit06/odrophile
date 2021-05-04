@@ -1,0 +1,30 @@
+{
+  "language": {
+    "value": "English",
+    "type": "string"
+  },
+  "language_code": {
+    "value": "en",
+    "type": "string"
+  },
+  "background_type": {
+    "value": "background",
+    "type": "string"
+  },
+  "background_title": {
+    "value": "Myvinyl",
+    "type": "string"
+  },
+  "background_path": {
+    "value": "myvinyl.jpg",
+    "type": "string"
+  },
+  "background_color": {
+    "value": "#000000",
+    "type": "string"
+  },
+  "theme": {
+    "value": "default",
+    "type": "string"
+  }
+}

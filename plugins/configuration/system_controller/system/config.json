@@ -1,0 +1,38 @@
+{
+  "playerName": {
+    "value": "Odrophile",
+    "type": "string"
+  },
+  "startupSound": {
+    "value": true,
+    "type": "boolean"
+  },
+  "kernelSettingValue": {
+    "value": 1,
+    "type": "number"
+  },
+  "kernelSettingLabel": {
+    "value": "Default",
+    "type": "string"
+  },
+  "device": {
+    "value": "Odroid-C",
+    "type": "string"
+  },
+  "show_wizard": {
+    "value": false,
+    "type": "boolean"
+  },
+  "uuid": {
+    "type": "string",
+    "value": "9a59ec0d-ccb4-4f90-9e14-9502855c818d"
+  },
+  "advanced_settings_mode": {
+    "type": "boolean",
+    "value": true
+  },
+  "allow_ui_statistics": {
+    "type": "boolean",
+    "value": false
+  }
+}
