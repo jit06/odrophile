@@ -8,7 +8,7 @@
 
 # install required packages
 echo "------------ install packages"
-apt-get -y install xorg xserver-xorg-video-mali mali-x11 chromium-browser busybox unzip
+apt-get -y install xorg xserver-xorg-video-mali mali-x11 chromium-browser busybox unzip autoconf make libtool libfftw3-dev libasound2-dev inotify-tools
 
 
 # allows mali HW accel
@@ -31,7 +31,6 @@ ln -s /usr/share/mali/libs/libGLESv2.so /usr/lib/chromium-browser/libGLESv2.so
 echo "------------ enable kiosk mode"
 cp scripts/volumiokiosk.sh /opt/
 cp scripts/volumio-kiosk.service /etc/systemd/system/
-chmod +x /opt/volumiokiosk.sh
 systemctl daemon-reload
 systemctl enable volumio-kiosk
 
@@ -81,13 +80,40 @@ systemctl enable adc-volume
 echo "------------ setup loading leds animation"
 cp scripts/loadingleds.sh /opt/
 cp scripts/loading-leds.service /etc/systemd/system/
-chmod +x /opt/loadingleds.sh
 systemctl daemon-reload
 systemctl enable loading-leds
+
+
+# install cava
+echo "------------ retreive cava sources and install it"
+cd ..
+git clone --depth 1 https://github.com/karlstav/cava
+cd cava
+./autogen.sh
+./configure
+make -j4
+sudo make install
+cd ../odrophile
+
+echo "audio_output {
+    type            "fifo"
+    name            "mpd_oled_FIFO"
+    path            "/tmp/mpd_oled_fifo"
+    format          "44100:16:2"
+}" >> /volumio/app/plugins/music_service/mpd/mpd.conf.tmpl
+
+cp config/cava.config /home/volumio/.config/cava/config
+
+
+# install vumeter script
+echo "------------ install vumeter scripts"
+cp scripts/leds-vumeter.sh scripts/start-vumeter.sh scripts/stop-vumeter.sh /opt/
+
 
 # set hostname
 echo "------------ set hostname"
 echo "odrophile" >> /etc/hostname
+
 
 # install volumio plugin and configurations
 echo "------------ install volumio plugins"
@@ -97,8 +123,20 @@ cd /tmp/gpiorandom
 unzip gpiorandom.zip
 volumio plugin install
 cd /home/volumio/odrophile
+
+mkdir /tmp/commandOnEvent
+cp plugins/commandOnEvent.zip /tmp/commandOnEvent/
+cd /tmp/commandOnEvent
+unzip commandOnEvent.zip
+volumio plugin install
+cd /home/volumio/odrophile
+
+
 echo "------------ install volumio configuration"
 cp -R plugins/configuration /data/
 
+
+echo "----------- unsure all /opt script are executable"
+chmod +x /opt/*.sh
 
 echo "----------- finished"
