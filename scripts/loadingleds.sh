@@ -26,9 +26,3 @@ for led in 0 1 2 3 4 5 6; do
     echo 0 > /sys/class/gpio/gpio${GPIO_LEDL[$led]}/value
     echo 0 > /sys/class/gpio/gpio${GPIO_LEDR[$led]}/value
 done
-
-echo "Free GPIO Out..."
-for pin in "${GPIO_OUT[@]}"; do
-	echo "free $pin"
-	echo $pin > /sys/class/gpio/unexport
-done
