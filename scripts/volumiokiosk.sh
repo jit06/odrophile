@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # wait for volumio UI to be ready
 while ! wget -q --spider http://localhost:3000
 do
