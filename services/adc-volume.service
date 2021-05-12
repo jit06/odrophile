@@ -1,0 +1,12 @@
+[Unit]
+Description=MPD volume control via ADC
+Wants=mpd.service
+After=mpd.service
+
+[Service]
+User=root
+Group=root
+ExecStart=/bin/bash /opt/adcvolume.sh 
+
+[Install]
+WantedBy=multi-user.target

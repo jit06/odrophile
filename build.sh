@@ -30,7 +30,7 @@ ln -s /usr/share/mali/libs/libGLESv2.so /usr/lib/chromium-browser/libGLESv2.so
 # enable kiosk mode
 echo "------------ enable kiosk mode"
 cp scripts/volumiokiosk.sh /opt/
-cp scripts/volumio-kiosk.service /etc/systemd/system/
+cp services/volumio-kiosk.service /etc/systemd/system/
 systemctl daemon-reload
 systemctl enable volumio-kiosk
 
@@ -70,7 +70,7 @@ mkimage -A arm -O linux -T ramdisk -C none -a 0 -e 0 -n uInitrd -d /boot/initrd.
 echo "------------ setup volume knob"
 sed -i -e "s/\${mixer}/mixer_type \"software\"/g" /volumio/app/plugins/music_service/mpd/mpd.conf.tmpl
 cp scripts/adcvolume.sh /opt/
-cp scripts/adc-volume.service /etc/systemd/system/
+cp services/adc-volume.service /etc/systemd/system/
 chmod +x /opt/adcvolume.sh
 systemctl daemon-reload
 systemctl enable adc-volume
@@ -79,7 +79,7 @@ systemctl enable adc-volume
 # setup loading leds animation
 echo "------------ setup loading leds animation"
 cp scripts/loadingleds.sh /opt/
-cp scripts/loading-leds.service /etc/systemd/system/
+cp services/loading-leds.service /etc/systemd/system/
 systemctl daemon-reload
 systemctl enable loading-leds
 
