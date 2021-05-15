@@ -108,18 +108,18 @@ echo "odrophile" >> /etc/hostname
 
 # install volumio plugin and configurations
 echo "------------ install volumio plugins"
-mkdir /tmp/gpiorandom
-cp plugins/gpiorandom.zip /tmp/gpiorandom/
-cd /tmp/gpiorandom
-unzip gpiorandom.zip
-volumio plugin install
+sudo -u volumio mkdir /tmp/gpiorandom
+sudo -u volumio cp plugins/gpiorandom.zip /tmp/gpiorandom/
+sudo -u volumio cd /tmp/gpiorandom
+sudo -u volumio unzip gpiorandom.zip
+sudo -u volumio volumio plugin install
 cd /home/volumio/odrophile
 
-mkdir /tmp/commandOnEvent
-cp plugins/commandOnEvent.zip /tmp/commandOnEvent/
-cd /tmp/commandOnEvent
-unzip commandOnEvent.zip
-volumio plugin install
+sudo -u volumio mkdir /tmp/commandOnEvent
+sudo -u volumio cp plugins/commandOnEvent.zip /tmp/commandOnEvent/
+sudo -u volumio cd /tmp/commandOnEvent
+sudo -u volumio unzip commandOnEvent.zip
+sudo -u volumio volumio plugin install
 cd /home/volumio/odrophile
 
 
