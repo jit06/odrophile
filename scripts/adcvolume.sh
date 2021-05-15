@@ -12,8 +12,9 @@ do
 		VOL_100=100
 	fi
 
-	if [ $VOL_100 != $LAST_VOLUME ]; then
+        diff=$(($VOL_100-$LAST_VOLUME))
 
+	if [ $diff != -1 ] && [ $diff != 1 ] && [ $diff != 0 ] ; then
 
 		LAST_VOLUME=$VOL_100
 		mpc volume $VOL_100
