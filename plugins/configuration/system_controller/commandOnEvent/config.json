@@ -1,0 +1,14 @@
+{
+  "commandstop": {
+    "type": "string",
+    "value": "/opt/stop-vumeter.sh"
+  },
+  "commandpause": {
+    "type": "string",
+    "value": "/opt/stop-vumeter.sh"
+  },
+  "commandplay": {
+    "type": "string",
+    "value": "/opt/start-vumeter.sh"
+  }
+}
