@@ -185,6 +185,16 @@
         "type": "string",
         "value": "STARTED"
       }
+    },
+    "gpiorandom": {
+      "enabled": {
+        "type": "boolean",
+        "value": true
+      },
+      "status": {
+        "type": "string",
+        "value": "STARTED"
+      }
     }
   },
   "system_controller": {
@@ -259,6 +269,16 @@
       }
     },
     "volumio_command_line_client": {
+      "enabled": {
+        "type": "boolean",
+        "value": true
+      },
+      "status": {
+        "type": "string",
+        "value": "STARTED"
+      }
+    },
+    "commandOnEvent": {
       "enabled": {
         "type": "boolean",
         "value": true

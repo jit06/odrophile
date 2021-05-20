@@ -96,11 +96,6 @@ echo "audio_output {
 cp config/cava.config /home/volumio/.config/cava/config
 
 
-# install vumeter script
-echo "------------ install vumeter scripts"
-cp scripts/leds-vumeter.sh scripts/start-vumeter.sh scripts/stop-vumeter.sh /opt/
-
-
 # set hostname
 echo "------------ set hostname"
 echo "odrophile" >> /etc/hostname

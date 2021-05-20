@@ -21,6 +21,10 @@
       {
         "type": "string",
         "value": ""
+      },
+      {
+        "type": "string",
+        "value": "TIFWIF2"
       }
     ]
   },
@@ -30,12 +34,16 @@
       {
         "type": "string",
         "value": ""
+      },
+      {
+        "type": "string",
+        "value": "hash::873f9783318978e861b46e695d618a9d4cc1bef2af7151d33a065d89871bcb20"
       }
     ]
   },
   "wireless_enabled": {
     "type": "boolean",
-    "value": false
+    "value": true
   },
   "wirelessdhcp": {
     "type": "boolean",
@@ -52,5 +60,29 @@
   "wirelessgateway": {
     "type": "string",
     "value": "192.168.1.1"
+  },
+  "enable_hotspot": {
+    "type": "boolean",
+    "value": true
+  },
+  "hotspot_fallback": {
+    "type": "boolean",
+    "value": true
+  },
+  "hotspot_name": {
+    "type": "string",
+    "value": "odrophile"
+  },
+  "hotspot_protection": {
+    "type": "boolean",
+    "value": true
+  },
+  "hotspot_password": {
+    "type": "string",
+    "value": "odrophile"
+  },
+  "hotspot_channel": {
+    "type": "string",
+    "value": "4"
   }
 }
