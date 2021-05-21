@@ -94,7 +94,7 @@ echo "audio_output {
 }" >> /volumio/app/plugins/music_service/mpd/mpd.conf.tmpl
 
 cp config/cava.config /home/volumio/.config/cava/config
-
+chown -R volumio:volumio /home/volumio/.config
 
 # set hostname
 echo "------------ set hostname"
