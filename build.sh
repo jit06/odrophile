@@ -8,7 +8,7 @@
 
 # install required packages
 echo "------------ install packages"
-apt-get -y install xorg xserver-xorg-video-mali mali-x11 chromium-browser busybox unzip autoconf make libtool libfftw3-dev libasound2-dev inotify-tools
+apt-get -y install xorg xserver-xorg-video-mali mali-x11 chromium-browser busybox unzip autoconf make libtool libfftw3-dev libasound2-dev inotify-tools exfat-fuse exfat-utils
 
 
 # allows mali HW accel
