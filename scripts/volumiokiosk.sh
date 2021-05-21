@@ -27,6 +27,7 @@ DISPLAY=:0 /usr/bin/chromium-browser \
 --disable-session-crashed-bubble \
 --disable-translate \
 --use-gl=egl \
+--window-position=0,0 \
 --window-size=800,480 \
 --disable-gpu-vsync \
 --disable-quic \
