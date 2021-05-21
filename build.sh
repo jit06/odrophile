@@ -87,10 +87,10 @@ sudo make install
 cd ../odrophile
 
 echo "audio_output {
-    type            "fifo"
-    name            "mpd_oled_FIFO"
-    path            "/tmp/mpd_oled_fifo"
-    format          "44100:16:2"
+    type            \"fifo\"
+    name            \"mpd_oled_FIFO\"
+    path            \"/tmp/mpd_oled_fifo\"
+    format          \"44100:16:2\"
 }" >> /volumio/app/plugins/music_service/mpd/mpd.conf.tmpl
 
 cp config/cava.config /home/volumio/.config/cava/config
