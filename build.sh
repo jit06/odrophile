@@ -58,6 +58,10 @@ chmod +x /etc/initramfs-tools/scripts/local-top/c1_init.sh
 update-initramfs -u
 mkimage -A arm -O linux -T ramdisk -C none -a 0 -e 0 -n uInitrd -d /boot/initrd.img-3.10.107-13 /media/boot/uInitrd
 
+# enabled dac modules
+echo "------------ enable dac module at boot"
+echo "snd-soc-pcm5102" >> /etc/modules-load.d/modules.conf
+echo "snd-soc-odroid-dac" >> /etc/modules-load.d/modules.conf
 
 # copy services and scripts files
 echo "------------ install scripts and services"
