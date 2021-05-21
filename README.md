@@ -14,7 +14,7 @@ Hardware build details (with the first software version) can be found here : htt
 - install it on a emmc or microsd (eg: dd in=odrophile-yyyymmdd.img of=/dev/sdx bs=1M)
 - boot your odroid C1+/C0
 
-If you want to another resolution, it can be changed if needed (boot.ini and chromium window's size in /opt/volumiokiosk.sh). However, the boot splash will not be displayed correctly unless you provide another one (/etc/logo.lzo).
+If you want to set another resolution, it can be changed if needed (boot.ini and chromium window's size in /opt/volumiokiosk.sh). However, the boot splash will not be displayed correctly unless you provide another one (/etc/logo.lzo).
 
 #### How to build on an odroid C1+/C0
 If you want to build yourself, it takes a few minutes:
